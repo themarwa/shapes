@@ -29,6 +29,8 @@ public:
         int tx1, int tx2, int tx3, int ty1, int ty2, int ty3,
         int cx, int cy, int radius) {
 
+        if (shapestate=="COPY"){
+
         string ss = selshape(px, py, rx1, ry1, rx2, ry2,
             tx1, tx2, tx3, ty1, ty2, ty3,
             cx, cy, radius);
@@ -54,7 +56,8 @@ public:
             cty2 = ty2;
             cty3 = ty3;
             copiedShape = "TRIANGLE";
-        }
+        } }
+    
         else {
             copiedShape = "NONE";
         }
@@ -63,7 +66,7 @@ public:
     }
 
 
-    void paste(int offsetX = 30, int offsetY = 30,string ) {
+    void paste(int offsetX = 30, int offsetY = 30) {
         if (copiedShape == "CIRCLE") {
             w.DrawCircle(ccx + offsetX, ccy + offsetY, cr, FILLED);
         }
