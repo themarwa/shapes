@@ -1,6 +1,7 @@
 using namespace std;
 #include<iostream>
 #include<cmath>
+#include "CMUgraphicsLib/CMUgraphics.h"
 class display:public window {
 public :
     string copy;
