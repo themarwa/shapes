@@ -1,5 +1,5 @@
-
 using namespace std;
+#pragma once
 #include <string>
 #include <cmath>
 #include "CMUgraphicsLib/CMUgraphics.h"
