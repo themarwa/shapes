@@ -31,6 +31,30 @@ public:
         return shapeuse;
         }
 
+   
+  void hl(window &w,string selectedShape, int px, int py, int rx1, int ry1, int rx2, int ry2, int tx1, int tx2, int tx3, int ty1, int ty2, int ty3, int cx, int cy, int radius) {
+    if (selectedShape == "RECTANGLE") {
+        w.SetPen(RED, 5);
+        w.DrawRectangle(rx1, ry1, rx2, ry2);
+        w.SetPen(BLACK, 1);
+        w.DrawString(10, 10, "Selected: RECTANGLE at (" + to_string(px) + "," + to_string(py) + ")");
+    }
+    else if (selectedShape == "CIRCLE") {
+        w.SetPen(RED, 5);
+        w.DrawCircle(cx, cy, radius);
+        w.SetPen(BLACK, 1);
+        w.DrawString(10, 10, "Selected: CIRCLE at (" + to_string(px) + "," + to_string(py) + ")");
+    }
+    else if (selectedShape == "TRIANGLE") {
+        w.SetPen(RED, 5);
+        w.DrawLine(tx1, ty1, tx2, ty2);
+        w.DrawLine(tx2, ty2, tx3, ty3);
+        w.DrawLine(tx3, ty3, tx1, ty1);
+        w.SetPen(BLACK, 1);
+        w.DrawString(10, 10, "Selected: TRIANGLE at (" + to_string(px) + "," + to_string(py) + ")");
+    }
+}
+
 
     
 
@@ -74,7 +98,7 @@ public:
     }
 
 
-    void paste(int offsetX = 30, int offsetY = 30, &window w) {
+    void paste(int offsetX = 30, int offsetY = 30, window &w) {
         if (copiedShape == "CIRCLE") {
             w.DrawCircle(ccx + offsetX, ccy + offsetY, cr, FILLED);
         }
