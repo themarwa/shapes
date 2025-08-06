@@ -2,7 +2,7 @@
 using namespace std;
 #include <string>
 #include <cmath>
-class ShapeManager :public window {
+class ShapeManager :public window,public display {
 public:
     string selshape(int px, int py, int rx1, int ry1, int rx2, int ry2,
         int tx1, int tx2, int tx3, int ty1, int ty2, int ty3,
@@ -25,7 +25,7 @@ public:
         return "NONE";
     }
 
-    int copy(int px, int py, int rx1, int ry1, int rx2, int ry2,
+    string copy(int px, int py, int rx1, int ry1, int rx2, int ry2,
         int tx1, int tx2, int tx3, int ty1, int ty2, int ty3,
         int cx, int cy, int radius) {
 
@@ -57,10 +57,9 @@ public:
         }
         else {
             copiedShape = "NONE";
-            return 69;
         }
 
-        return 0;
+         return copiedShape;
     }
 
 
