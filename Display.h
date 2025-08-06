@@ -30,7 +30,7 @@ public :
 
         }
 
-    void display2(window w, int wx, int wy, int stx, int sty, int px, int py) {
+    void display1(window w, int wx, int wy, int stx, int sty, int px, int py) {
         w.ChangeTitle("ZC Drawing Project");
         w.SetPen(BLACK);
         w.DrawRectangle(10, 10, 170, 120);
